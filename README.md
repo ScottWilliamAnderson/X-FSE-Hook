@@ -83,6 +83,22 @@ This preserves normal sign-in while launching your selected app immediately afte
 * **Blank list after Scan**
   Click **Scan UWP Apps** and **Scan Installed Programs** again, or use the search box to filter.
 
+* **Hooked app doesn't come to foreground**
+  Ensure the `Focus-Application.ps1` script is in the same directory as the main tool. The wrapper script handles automatic window focus.
+
+---
+
+## 🎯 Automatic Window Focus
+
+**NEW:** Hooked applications now automatically come to the foreground on startup!
+
+The tool includes a `Focus-Application.ps1` wrapper script that:
+* Launches your selected application at sign-in
+* Waits for the application window to appear
+* Automatically brings it to the foreground using Win32 APIs
+
+This solves the issue where apps like Playnite Fullscreen would start in the background while Xbox FSE remained focused.
+
 ---
 
 ## 🧩 Presets
